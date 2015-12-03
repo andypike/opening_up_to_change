@@ -1,0 +1,32 @@
+<h1>Edit User</h1>
+
+<%= form_for @user do %>
+  <div class="form-group">
+    <%= label(:user, :name, "Name") %>
+    <%= text_field(:user, :name, :class => "form-control") %>
+  </div>
+
+  <div class="form-group">
+    <%= label(:user, :email, "Email") %>
+    <%= text_field(:user, :email, :class => "form-control") %>
+  </div>
+
+  <div class="form-group">
+    <%= label(:user, :mobile, "Mobile") %>
+    <%= text_field(:user, :mobile, :class => "form-control") %>
+  </div>
+
+  <div class="form-group">
+    <%= label(:user, :url, "Webhook Url") %>
+    <%= text_field(:user, :url, :class => "form-control") %>
+  </div>
+
+  <div class="form-group">
+    <%= label(:user, :notification_method, "Notification Method") %>
+
+    <% method_options = NotifierRegistry.methods.map { |m| [m.titleize, m] } %>
+    <%= select(:user, :notification_method, method_options, {}, :class => "form-control") %>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Save</button>
+<% end %>

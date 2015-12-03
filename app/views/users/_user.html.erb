@@ -1,0 +1,6 @@
+<tr>
+  <td><%= user.name %></td>
+  <td><%= user.notification_method.titleize %></td>
+  <td><%= link_to "Edit", edit_user_path(user), :class => "btn btn-default" %></td>
+  <td><%= link_to "Notify", user_notify_path(user), :class => "btn btn-default" %></td>
+</tr>

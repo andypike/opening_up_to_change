@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Self Register</title>
+
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <% if flash[:notice].present? %>
+      <div class="alert alert-success" role="alert">
+        <div class="container">
+          <%= flash[:notice] %>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
